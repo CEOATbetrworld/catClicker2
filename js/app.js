@@ -8,12 +8,13 @@ let Cat = function() {
 
 
 let ViewModel = function() {
+    let self = this;
     this.currentCat = ko.observable(new Cat());
     this.incrementCounter = function() {
-        this.currentCat().clickCount(this.currentCat().clickCount() + 1);
+        self.currentCat().clickCount(self.currentCat().clickCount() + 1);
 
-        if (this.currentCat().clickCount() === 5) {
-            this.currentCat().name("woo hoo upgrade");
+        if (self.currentCat().clickCount() === 5) {
+            self.currentCat().name("woo hoo upgrade");
         }
     };
 }
